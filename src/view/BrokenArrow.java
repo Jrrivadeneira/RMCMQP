@@ -12,7 +12,7 @@ public class BrokenArrow extends Panel {
 	/**
 	 * Written by Jack Rivadeneira
 	 */
-	
+
 	private static final long serialVersionUID = 6327066632666023126L;
 	Image buff;
 	Graphics2D bg;
@@ -87,8 +87,16 @@ public class BrokenArrow extends Panel {
 			}
 		}
 	}
+	
+	public void setWeirdResolution(){
+		core.Configuration.resolutions[core.Configuration.currentResolution][0] = this.getWidth();
+		core.Configuration.resolutions[core.Configuration.currentResolution][1] = this.getHeight();
+		
+	}
 
 	public void update(Graphics g) {
+		setWeirdResolution();
+
 		g.drawImage(
 				buff,
 				0,

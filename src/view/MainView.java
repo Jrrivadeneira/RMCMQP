@@ -116,17 +116,17 @@ public class MainView extends JFrame {
 		movementButtons.setBorder(new EmptyBorder(10, 10, 10, 10));
 		movementButtons.setLayout(ThreeByThree);
 
-		movementButtons.add(new JButton("20"));
-		movementButtons.add(new JButton("21"));
-		movementButtons.add(new JButton("22"));
+		movementButtons.add(new JButton("FORWARD LEFT"));
+		movementButtons.add(new JButton("FORWARD"));
+		movementButtons.add(new JButton("FORWARD RIGHT"));
 
-		movementButtons.add(new JButton("23"));
-		movementButtons.add(new JButton("24"));
-		movementButtons.add(new JButton("25"));
+		movementButtons.add(new JButton("LEFT"));
+		movementButtons.add(new JButton("STOP"));
+		movementButtons.add(new JButton("RIGHT"));
 
-		movementButtons.add(new JButton("26"));
-		movementButtons.add(new JButton("27"));
-		movementButtons.add(new JButton("28"));
+		movementButtons.add(new JButton("BACK LEFT"));
+		movementButtons.add(new JButton("BACK"));
+		movementButtons.add(new JButton("BACK RIGHT"));
 
 		CenterPanel.add(commandPanel);
 
