@@ -18,11 +18,10 @@ public final class Particle extends Actor {
 			speed *= .992;
 			frequency += 1;
 		}
-
 	}
 
 	public DrawData getDrawData() {
-		return new DrawData(x, y, lx, ly, mass, length, team, lifetime);
+		return new DrawData((int)x, (int)y, mass, length, team, lifetime);
 	}
 
 }

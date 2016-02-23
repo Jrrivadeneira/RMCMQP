@@ -47,7 +47,7 @@ public abstract class Actor {
 	}
 
 	public DrawData getDrawData() {
-		return new DrawData(x, y, lx, ly, mass, length, team);
+		return new DrawData((int)x, (int)y, mass, length, team);
 	}
 
 	protected void move() {

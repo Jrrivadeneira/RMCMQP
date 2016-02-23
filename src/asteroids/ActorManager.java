@@ -25,27 +25,19 @@ public class ActorManager implements Runnable {
 		init();
 		while (alive) {
 			runActors();
-			addAsteriods();
 			if (gen % 500 == 0)
 				delay(5);
 			gen++;
 		}
 	}
 
-	private void addAsteriods() {
-		if (Asteriod.count == 0) {
-			// add(new Asteriod());
-			// add(new Asteriod());
-			// add(new Asteriod());
-			// add(new Asteriod());
-		}
-
+	public Actor[] getActorList() {
+		return this.act;
 	}
 
 	private void init() {
 		act[0] = new Player(this);
 		act[1] = ((Player) act[0]).getFront();
-		// addAsteriods();
 	}
 
 	public void kill() {
@@ -75,7 +67,6 @@ public class ActorManager implements Runnable {
 			else if (gen % act[i].frequency == 0)
 				act[i].run();
 			i++;
-
 		}
 	}
 

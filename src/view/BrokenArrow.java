@@ -2,6 +2,8 @@ package view;
 
 import java.awt.*;
 import java.awt.event.*;
+import java.awt.image.BufferedImage;
+
 import asteroids.Actor;
 import asteroids.ActorManager;
 import asteroids.Control;
@@ -18,7 +20,7 @@ public class BrokenArrow extends Panel {
 	Graphics2D bg;
 	int gen = 0;
 	float uiSpace = 0.15f;
-	public ActorManager act = new ActorManager(800);
+	public ActorManager act = new ActorManager(200);
 	public static boolean run = false;
 
 	public BrokenArrow() {
@@ -70,14 +72,15 @@ public class BrokenArrow extends Panel {
 		double y = core.Configuration.getRenderResolution()[1] * f;
 		int[] r = { (int) x, (int) y };
 		return r;
-
 	}
 
 	private void newFrame() {
 		if (this.isVisible()) {
 			int imgWidth = core.Configuration.resolutions[core.Configuration.currentResolution][0];
 			int imgHeight = core.Configuration.resolutions[core.Configuration.currentResolution][1];
-			buff = this.getParent().createImage(imgWidth, imgHeight);
+			// buff = this.getParent().createImage(imgWidth, imgHeight);
+			buff = new BufferedImage(imgWidth, imgHeight,
+					BufferedImage.TYPE_3BYTE_BGR);
 			bg = (Graphics2D) buff.getGraphics();
 			if (core.Configuration.AAEnabled) {
 				bg.setRenderingHint(RenderingHints.KEY_ANTIALIASING,
@@ -87,16 +90,17 @@ public class BrokenArrow extends Panel {
 			}
 		}
 	}
-	
-	public void setWeirdResolution(){
-		core.Configuration.resolutions[core.Configuration.currentResolution][0] = this.getWidth();
-		core.Configuration.resolutions[core.Configuration.currentResolution][1] = this.getHeight();
-		
+
+	public void setWeirdResolution() {
+		core.Configuration.resolutions[core.Configuration.currentResolution][0] = this
+				.getWidth();
+		core.Configuration.resolutions[core.Configuration.currentResolution][1] = this
+				.getHeight();
+
 	}
 
 	public void update(Graphics g) {
 		setWeirdResolution();
-
 		g.drawImage(
 				buff,
 				0,
@@ -107,11 +111,11 @@ public class BrokenArrow extends Panel {
 				0,
 				core.Configuration.resolutions[core.Configuration.renderResolution][0],
 				core.Configuration.resolutions[core.Configuration.renderResolution][1],
-				this);
-		if (gen % 10 == 0)
-			delay(5);
+				null);
+		delay(5);
 		newFrame();
 		gen++;
+
 		paint(g);
 	}
 

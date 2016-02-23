@@ -16,15 +16,15 @@ public final class Player extends Actor {
 	private ActorManager act;
 
 	public Player(ActorManager ACT) {
-		super(10, ACT);
-		speed = 0.03;
+		super(100, ACT);
+		speed = 0.06;
 		team = 1;
 		front = new Ball(100, ACT);
 		front.team = 1;
 		front.length = 15;
-		t = -Math.PI / 2;
+		t = Math.PI / 2;
 		ys = .01;
-		ta = 0.000005;
+		ta = 0.00005;
 		gunReady = true;
 		lives = 3;
 		this.act = ACT;
