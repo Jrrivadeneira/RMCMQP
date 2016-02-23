@@ -27,7 +27,8 @@ public class MainView extends JFrame {
 	Color fg = Color.LIGHT_GRAY;
 	Font f = new Font("Monospaced", Font.BOLD, 16);
 	BrokenArrow field;
-
+	BrokenArrow Dash;
+	
 	public MainView() {
 
 		this.setSize(800, 600);
@@ -49,7 +50,7 @@ public class MainView extends JFrame {
 		JPanel rightPanel = new JPanel();
 		rightPanel.setBorder(new EmptyBorder(10, 10, 10, 10));
 		rightPanel.setLayout(hsplit);
-		rightPanel.add(new JButton("SIX"));
+		rightPanel.add(new Dashboard());
 
 		JPanel auxillaryCommands = new JPanel();
 		auxillaryCommands.setLayout(vsplit);

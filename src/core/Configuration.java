@@ -14,5 +14,7 @@ public class Configuration {
 	public static int[] getRenderResolution() {
 		return resolutions[renderResolution];
 	}
+	
+	public static final int connectionPort = 8000;
 
 }
